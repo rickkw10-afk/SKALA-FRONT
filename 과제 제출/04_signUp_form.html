@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT 스터디 모임 가입신청</title>
+</head>
+<body>
+
+    <h1>IT 스터디 멤버 모집</h1>
+    <p>공동 학습과 프로젝트 진행을 위한 스터디 멤버 가입 양식입니다.</p>
+
+    <form action="signUpResult.html" method="get">
+        
+        <fieldset>
+            <legend>기본 인적 사항</legend>
+            <p>
+                <label for="applicantName">이름: </label>
+                <input type="text" id="applicantName" name="applicantName" required> (필수)
+            </p>
+            <p>
+                <label for="applicantEmail">이메일 주소: </label>
+                <input type="email" id="applicantEmail" name="applicantEmail" placeholder="example@domain.com" required> (필수)
+            </p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>기술 관심 분야 및 스터디 희망 과목</legend>
+            <p>참여하고 싶은 분야를 모두 선택해 주세요 (중복 가능):</p>
+            <p>
+                <input type="checkbox" id="techHtml" name="tech" value="html_css">
+                <label for="techHtml">HTML5 & CSS3 웹 표준 실습</label><br>
+
+                <input type="checkbox" id="techJs" name="tech" value="javascript">
+                <label for="techJs">바닐라 자바스크립트 기초</label><br>
+
+                <input type="checkbox" id="techReact" name="tech" value="react">
+                <label for="techReact">리액트(React) 컴포넌트 설계</label><br>
+
+                <input type="checkbox" id="techGit" name="tech" value="git">
+                <label for="techGit">Git & GitHub 협업 워크플로우</label>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>신청 한마디</legend>
+            <p>
+                <label for="motivation">스터디에 참여하고자 하는 각오나 목표를 적어주세요:</label><br>
+                <textarea id="motivation" name="motivation" rows="4" cols="50" placeholder="자유롭게 작성해 주세요."></textarea>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="스터디 신청하기">
+        <input type="reset" value="입력 초기화">
+
+    </form>
+
+</body>
+</html>
