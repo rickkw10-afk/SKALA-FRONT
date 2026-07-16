@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,157 +8,170 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <h1> Rick의 HTML 웹 포트폴리오 (통합 과제)</h1>
     <p>지금까지 학습한 모든 HTML 태그(목록, 표, 링크, 텍스트 강조 등)를 유기적으로 연결하여 기획한 <strong>"크리에이티브 올인원 페이지"</strong>입니다.</p>
+<hr>
+    <div class="shortcut-menu-container">
+    <h3 class="menu-title">📁 바로가기 메뉴</h3>
     
+    <ul class="shortcut-menu">
+        <li><a href="02_my_intro_page.html">소개 (Profile)</a></li>
+        <li><a href="05_my_tripHub.html">여행 앨범 (Album)</a></li>
+        <li><a href="04_signUp_form.html">회원가입 (Sign Up)</a></li>
+    </ul>
+</div>
 
-    
     <hr>
 
     <h2 id="profile">👤 1. 안녕하세요! 저를 소개합니다</h2>
     <p>아래는 제가 좋아하는 것들과 올해의 목표, 그리고 저를 표현하는 단어들을 목록 태그로 정리한 프로필입니다.</p>
 
-<div class="intro-section">
-    <h3>🍕 내가 좋아하는 음식 (순서 없는 목록: ul)</h3>
-    <ul>
-        <li> 아이스 아메리카노</li>
-        <li> 매콤한 떡볶이</li>
-        <li> 달콤한 초콜릿 케이크</li>
-    </ul>
-</div>
+    <div class="grid-container">
+        
+        <div class="intro-section">
+            <h3>🍕 내가 좋아하는 음식 </h3>
+            <ul>
+                <li> 아이스 아메리카노</li>
+                <li> 매콤한 떡볶이</li>
+                <li> 달콤한 초콜릿 케이크</li>
+            </ul>
+        </div>
 
+        <div class="intro-section">
+            <h3> 올해 할 일 </h3>
+            <ol>
+                <li> 일주일에 책 한 권씩 읽기 📚</li>
+                <li> 꾸준히 운동해서 체력 키우기 💪</li>
+                <li> 새로운 프로그래밍 언어 완벽하게 배우기 💻</li>
+            </ol>
+        </div>
 
-<div class="intro-section">
-    <h3> 올해 할 일 (순서 있는 목록: ol)</h3>
-    <ol>
-        <li> 일주일에 책 한 권씩 읽기 📚</li>
-        <li> 꾸준히 운동해서 체력 키우기 💪</li>
-        <li> 새로운 프로그래밍 언어 완벽하게 배우기 💻</li>
-    </ol>
-</div>
+        <div class="intro-section">
+            <h3>✨ 나를 설명하는 단어들 </h3>
+            <dl>
+                <dt><strong> 호기심</strong></dt>
+                <dd>새로운 기술이나 흥미로운 트렌드를 보면 직접 경험해보고 배워야 직성이 풀립니다.</dd>
+                <br>
+                <dt><strong> 꾸준함</strong></dt>
+                <dd>매일 작은 계획이라도 세우고 그것을 지키기 위해 노력하는 성실함을 가지고 있습니다.</dd>
+                <br>
+                <dt><strong> 크리에이티브</strong></dt>
+                <dd>단순한 결과물보다는 사용자에게 더 나은 경험과 시각적인 즐거움을 주는 것을 좋아합니다.</dd>
+            </dl>
+        </div>
 
-<div class="intro-section">
-    <h3>✨ 나를 설명하는 단어들 (정의 목록: dl)</h3>
-    <dl>
-        <dt><strong> 호기심</strong></dt>
-        <dd>새로운 기술이나 흥미로운 트렌드를 보면 직접 경험해보고 배워야 직성이 풀립니다.</dd>
-        <br>
-        <dt><strong> 꾸준함</strong></dt>
-        <dd>매일 작은 계획이라도 세우고 그것을 지키기 위해 노력하는 성실함을 가지고 있습니다.</dd>
-        <br>
-        <dt><strong> 크리에이티브</strong></dt>
-        <dd>단순한 결과물보다는 사용자에게 더 나은 경험과 시각적인 즐거움을 주는 것을 좋아합니다.</dd>
-    </dl>
-</div>
+    </div> <hr>
 
+    <div class="main-wrapper">
+        
+        <main>
+            <h2 id="class"> <i class="fa-regular fa-calendar-days"></i>2. 나의 강의 시간표</h2>
+            <p>수업 일정 및 핵심 세션 시간표입니다. 2시간 이상의 긴 세션과 점심시간은 셀 병합(rowspan, colspan)을 사용해 구조화했습니다.</p>
 
-    <hr>
+            <table border="1" cellpadding="8" cellspacing="0">
+                <thead>
+                    <tr bgcolor="#f2f2f2">
+                        <th>시간</th>
+                        <th>월요일</th>
+                        <th>화요일</th>
+                        <th>수요일</th>
+                        <th>목요일</th>
+                        <th>금요일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00 - 10:00</td>
+                        <td rowspan="3"><br><i class="fa-solid fa-desktop"></i> Vue.js웹 프레임워크 </td>
+                        <td><i class="fa-solid fa-lock"></i>네트워크<br>보안 기초 </td>
+                        <td rowspan="3">웹 시스템<br>설계 및 분석 </td>
+                        <td><i class="fa-regular fa-lightbulb"></i> IT 트렌드 특강 </td>
+                        <td rowspan="3">자바스크립트<br>심화 실습 </td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 11:00</td>
+                        <td rowspan="2">알고리즘 문제풀이 </td>
+                        <td rowspan="2">데이터베이스<br>SQL 실습 </td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 12:00</td>
+                    </tr>
+                    <tr align="center" bgcolor="#fafafa">
+                        <td>12:00 - 13:00</td>
+                        <td colspan="5"> 점 심 시 간 </td>
+                    </tr>
+                    <tr>
+                        <td>13:00 - 14:00</td>
+                        <td rowspan="3">UI/UX<br>디자인 표준 </td>
+                        <td rowspan="2">리눅스<br>시스템 관리 </td>
+                        <td rowspan="2">클라우드<br>AWS 기초 </td>
+                        <td rowspan="2">자료구조 </td>
+                        <td>개인 프로젝트 </td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:00</td>
+                        <td rowspan="2">오픈소스<br>소프트웨어 </td>
+                    </tr>
+                    <tr>
+                        <td>15:00 - 16:00</td>
+                        <td rowspan="2">Git & GitHub<br>버전 관리 </td>
+                        <td rowspan="2">인공지능<br>머신러닝 기초 </td>
+                        <td rowspan="2">빅데이터<br>분석 실무 </td>
+                    </tr>
+                    <tr>
+                        <td>16:00 - 17:00</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>17:00 - 18:00</td>
+                        <td>취업 창업 특강 </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>주간 회고 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
 
-    <h2 id="class"> <i class="fa-regular fa-calendar-days"></i>2. 나의 강의 시간표</h2>
-    <p>수업 일정 및 핵심 세션 시간표입니다. 2시간 이상의 긴 세션과 점심시간은 셀 병합(rowspan, colspan)을 사용해 구조화했습니다.</p>
+        <aside>
+            <h2 id="holiday"> 3. 나의 휴일 일과</h2>
+            <p>바쁜 주중 일정을 마치고 보내는 힐링 가득한 저의 주말 루틴입니다.</p>
 
-    <table border="1" cellpadding="8" cellspacing="0">
-        <thead>
-            <tr bgcolor="#f2f2f2">
-                <th>시간</th>
-                <th>월요일</th>
-                <th>화요일</th>
-                <th>수요일</th>
-                <th>목요일</th>
-                <th>금요일</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>09:00 - 10:00</td>
-                <td rowspan="3"><br><i class="fa-solid fa-desktop"></i> Vue.js웹 프레임워크 </td>
-                <td><i class="fa-solid fa-lock"></i>네트워크<br>보안 기초 </td>
-                <td rowspan="3">웹 시스템<br>설계 및 분석 </td>
-                <td><i class="fa-regular fa-lightbulb"></i> IT 트렌드 특강IT 트렌드 특강 </td>
-                <td rowspan="3">자바스크립트<br>심화 실습 </td>
-            </tr>
-            <tr>
-                <td>10:00 - 11:00</td>
-                <td rowspan="2">알고리즘 문제풀이 </td>
-                <td rowspan="2">데이터베이스<br>SQL 실습 </td>
-            </tr>
-            <tr>
-                <td>11:00 - 12:00</td>
-            </tr>
-            <tr align="center" bgcolor="#fafafa">
-                <td>12:00 - 13:00</td>
-                <td colspan="5"> 점 심 시 간 </td>
-            </tr>
-            <tr>
-                <td>13:00 - 14:00</td>
-                <td rowspan="3">UI/UX<br>디자인 표준 </td>
-                <td rowspan="2">리눅스<br>시스템 관리 </td>
-                <td rowspan="2">클라우드<br>AWS 기초 </td>
-                <td rowspan="2">자료구조 </td>
-                <td>개인 프로젝트 </td>
-            </tr>
-            <tr>
-                <td>14:00 - 15:00</td>
-                <td rowspan="2">오픈소스<br>소프트웨어 </td>
-            </tr>
-            <tr>
-                <td>15:00 - 16:00</td>
-                <td rowspan="2">Git & GitHub<br>버전 관리 </td>
-                <td rowspan="2">인공지능<br>머신러닝 기초 </td>
-                <td rowspan="2">빅데이터<br>분석 실무 </td>
-            </tr>
-            <tr>
-                <td>16:00 - 17:00</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>17:00 - 18:00</td>
-                <td>취업 창업 특강 </td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>주간 회고 </td>
-            </tr>
-        </tbody>
-    </table>
+            <h3> 아침과 낮</h3>
+            <p>
+                09:00 - 늦잠 자는 행복 <br>
+                10:00 - <mark>브런치</mark> 즐기기 <br>
+                11:00 - 커피 마시기 <br>
+                13:00 - 공원 산책
+            </p>
 
-    <hr>
+            <h3> 오후와 밤</h3>
+            <p>
+                14:30 - 사진 찍으며 일상의 순간 기록 <br>
+                16:00 - 충동구매 대신 <mark>창의적인 쇼핑</mark> <br>
+                18:00 - 맛있는 저녁 만들기 <br>
+                20:00 - 영화 감상 <br>
+                23:00 - 짧은 독서
+            </p>
+        </aside>
 
-    <h2 id="holiday"> 3. 나의 휴일 일과</h2>
-    <p>바쁜 주중 일정을 마치고 보내는 힐링 가득한 저의 주말 루틴입니다.</p>
-
-    <h3> 아침과 낮</h3>
-    <p>
-        09:00 -  늦잠 자는 행복 <br>
-        10:00 -  <mark>브런치</mark> 즐기기 <br>
-        11:00 -  커피 마시기 <br>
-        13:00 -  공원 산책
-    </p>
-
-    <h3> 오후와 밤</h3>
-    <p>
-        14:30 -  사진 찍으며 일상의 순간 기록 <br>
-        16:00 -  충동구매 대신 <mark>창의적인 쇼핑</mark> <br>
-        18:00 -  맛있는 저녁 만들기 <br>
-        20:00 -  영화 감상 <br>
-        23:00 -  짧은 독서
-    </p>
-
-    <hr>
+    </div> <hr>
 
     <h2 id="external"> 4. 자주 방문하는 외부 서비스</h2>
     <p>개발 공부 및 평소에 자주 활용하는 바로가기 링크 목록입니다. (새 창 열기 옵션 적용)</p>
-    <ul>
+    <ul class="link-menu">
         <li><a href="https://github.com" target="_blank"> 나의 깃허브(GitHub) 바로가기</a></li>
         <li><a href="https://www.naver.com" target="_blank"> 네이버(NAVER) 바로가기</a></li>
         <li><a href="https://www.google.com" target="_blank"> 구글(Google) 바로가기</a></li>
     </ul>
 
     <br><br>
-    
 
 </body>
+
 </html>
