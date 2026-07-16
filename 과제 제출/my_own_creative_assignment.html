@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick's Creative HTML Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -17,20 +19,26 @@
     <h2 id="profile">👤 1. 안녕하세요! 저를 소개합니다</h2>
     <p>아래는 제가 좋아하는 것들과 올해의 목표, 그리고 저를 표현하는 단어들을 목록 태그로 정리한 프로필입니다.</p>
 
+<div class="intro-section">
     <h3>🍕 내가 좋아하는 음식 (순서 없는 목록: ul)</h3>
     <ul>
         <li> 아이스 아메리카노</li>
         <li> 매콤한 떡볶이</li>
         <li> 달콤한 초콜릿 케이크</li>
     </ul>
+</div>
 
+
+<div class="intro-section">
     <h3> 올해 할 일 (순서 있는 목록: ol)</h3>
     <ol>
         <li> 일주일에 책 한 권씩 읽기 📚</li>
         <li> 꾸준히 운동해서 체력 키우기 💪</li>
         <li> 새로운 프로그래밍 언어 완벽하게 배우기 💻</li>
     </ol>
+</div>
 
+<div class="intro-section">
     <h3>✨ 나를 설명하는 단어들 (정의 목록: dl)</h3>
     <dl>
         <dt><strong> 호기심</strong></dt>
@@ -42,10 +50,12 @@
         <dt><strong> 크리에이티브</strong></dt>
         <dd>단순한 결과물보다는 사용자에게 더 나은 경험과 시각적인 즐거움을 주는 것을 좋아합니다.</dd>
     </dl>
+</div>
+
 
     <hr>
 
-    <h2 id="class"> 2. 나의 강의 시간표</h2>
+    <h2 id="class"> <i class="fa-regular fa-calendar-days"></i>2. 나의 강의 시간표</h2>
     <p>수업 일정 및 핵심 세션 시간표입니다. 2시간 이상의 긴 세션과 점심시간은 셀 병합(rowspan, colspan)을 사용해 구조화했습니다.</p>
 
     <table border="1" cellpadding="8" cellspacing="0">
@@ -62,10 +72,10 @@
         <tbody>
             <tr>
                 <td>09:00 - 10:00</td>
-                <td rowspan="3">Vue.js<br>웹 프레임워크 </td>
-                <td>네트워크<br>보안 기초 </td>
+                <td rowspan="3"><br><i class="fa-solid fa-desktop"></i> Vue.js웹 프레임워크 </td>
+                <td><i class="fa-solid fa-lock"></i>네트워크<br>보안 기초 </td>
                 <td rowspan="3">웹 시스템<br>설계 및 분석 </td>
-                <td>IT 트렌드 특강 </td>
+                <td><i class="fa-regular fa-lightbulb"></i> IT 트렌드 특강IT 트렌드 특강 </td>
                 <td rowspan="3">자바스크립트<br>심화 실습 </td>
             </tr>
             <tr>
