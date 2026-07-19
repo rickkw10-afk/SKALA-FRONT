@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKALA 회원가입</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- position:fixed + z-index 로 스크롤해도 상단에 고정되는 헤더 -->
+  <header class="topbar">
+    <span class="topbar__logo">SKALA</span>
+    <span class="topbar__sub">SK AX 교육 프로그램</span>
+  </header>
+
+  <main class="card">
+    <h1 class="card__title">회원가입</h1>
+    <p class="card__desc">SKALA에 오신 것을 환영합니다. 아래 정보를 입력해 주세요.</p>
+
+    <!-- method=get: 제출하면 입력값이 URL 쿼리스트링으로 result.html 에 전달됨 -->
+    <form id="signupForm" method="get" action="result.html">
+
+      <!-- fieldset/legend 로 '계정' 항목을 하나의 그룹으로 묶음 -->
+      <fieldset class="group">
+        <legend class="group__title">계정 정보</legend>
+
+        <div class="field">
+          <label for="userId">아이디 <span class="req">*</span></label>
+          <!-- pattern: ^,$ 는 시작/끝 고정, [A-Za-z0-9]{4,12} 는 영문·숫자 4~12자만 허용 -->
+          <input type="text" id="userId" name="userId"
+                 pattern="^[A-Za-z0-9]{4,12}$" minlength="4" maxlength="12"
+                 placeholder="영문·숫자 4~12자" required>
+          <p class="hint">영문 대소문자와 숫자만, 4~12자</p>
+        </div>
+
+        <div class="field">
+          <label for="userPw">비밀번호 <span class="req">*</span></label>
+          <div class="pw">
+            <input type="password" id="userPw" name="userPw"
+                   minlength="8" placeholder="8자 이상" required>
+            <!-- data-target 으로 어떤 input 을 보이게 할지 연결 -->
+            <button type="button" class="pw__toggle" data-target="userPw">보기</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="userPw2">비밀번호 확인 <span class="req">*</span></label>
+          <div class="pw">
+            <input type="password" id="userPw2" name="userPw2"
+                   minlength="8" placeholder="비밀번호를 한 번 더 입력" required>
+            <button type="button" class="pw__toggle" data-target="userPw2">보기</button>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- fieldset/legend 로 '개인' 항목 그룹화 -->
+      <fieldset class="group">
+        <legend class="group__title">개인 정보</legend>
+
+        <div class="field">
+          <label for="userName">이름 <span class="req">*</span></label>
+          <input type="text" id="userName" name="userName"
+                 placeholder="이름을 입력하세요" required>
+        </div>
+
+        <div class="field">
+          <label for="userEmail">이메일 <span class="req">*</span></label>
+          <input type="email" id="userEmail" name="userEmail"
+                 placeholder="example@sk.com" required>
+        </div>
+
+        <div class="field">
+          <label for="userPhone">전화번호</label>
+          <!-- 전화번호 형식 010-0000-0000 강제: \d 는 숫자 한 자리 -->
+          <input type="tel" id="userPhone" name="userPhone"
+                 pattern="^010-\d{4}-\d{4}$" maxlength="13"
+                 placeholder="010-0000-0000">
+          <p class="hint">010-0000-0000 형식으로 입력</p>
+        </div>
+
+        <div class="field">
+          <label for="userBirth">생년월일</label>
+          <!-- date 타입: min/max 로 선택 가능 범위 제한 -->
+          <input type="date" id="userBirth" name="userBirth"
+                 min="1920-01-01" max="2026-12-31">
+        </div>
+
+        <div class="field">
+          <span class="field__label">성별</span>
+          <!-- 같은 name 의 radio 는 하나만 선택 가능 -->
+          <div class="choices">
+            <label class="chip"><input type="radio" name="gender" value="남성" checked> 남성</label>
+            <label class="chip"><input type="radio" name="gender" value="여성"> 여성</label>
+            <label class="chip"><input type="radio" name="gender" value="비공개"> 비공개</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="region">지역</label>
+          <select id="region" name="region">
+            <option value="" disabled selected>-- 지역 선택 --</option>
+            <option value="서울">서울</option>
+            <option value="부산">부산</option>
+            <option value="대구">대구</option>
+            <option value="인천">인천</option>
+            <option value="광주">광주</option>
+            <option value="대전">대전</option>
+            <option value="경기">경기</option>
+            <option value="강원">강원</option>
+            <option value="제주">제주</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- fieldset/legend 로 '개발 프로필' 그룹화 -->
+      <fieldset class="group">
+        <legend class="group__title">개발 프로필</legend>
+
+        <div class="field">
+          <span class="field__label">관심 분야 (복수 선택 가능)</span>
+          <!-- 같은 name 의 checkbox 여러 개 → 제출 시 복수 값으로 전달 -->
+          <div class="choices">
+            <label class="chip"><input type="checkbox" name="stack" value="프론트엔드"> 프론트엔드</label>
+            <label class="chip"><input type="checkbox" name="stack" value="백엔드"> 백엔드</label>
+            <label class="chip"><input type="checkbox" name="stack" value="모바일"> 모바일</label>
+            <label class="chip"><input type="checkbox" name="stack" value="데이터/AI"> 데이터/AI</label>
+            <label class="chip"><input type="checkbox" name="stack" value="DevOps"> DevOps</label>
+            <label class="chip"><input type="checkbox" name="stack" value="디자인"> 디자인</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="bio">한 줄 소개</label>
+          <textarea id="bio" name="bio" rows="4" maxlength="200"
+                    placeholder="자신을 소개하는 한 줄을 적어보세요 (최대 200자)"></textarea>
+        </div>
+      </fieldset>
+
+      <label class="agree">
+        <input type="checkbox" name="agree" id="agree" required>
+        <span>이용약관 및 개인정보 처리방침에 동의합니다 <span class="req">*</span></span>
+      </label>
+
+      <div class="actions">
+        <input type="submit" class="btn btn-primary" value="가입하기">
+        <input type="reset" class="btn" value="다시 작성">
+      </div>
+    </form>
+  </main>
+
+  <script src="join.js" defer></script>
+</body>
+
+</html>

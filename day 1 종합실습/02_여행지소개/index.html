@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- head 구성: 검색/공유용 메타 정보 -->
+  <meta name="description" content="부산의 대표 명소와 먹거리를 소개하는 여행 가이드 페이지">
+  <meta name="author" content="Rick · Busan Trip Guide">
+  <title>부산 여행 가이드</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== header + nav : position:fixed 로 항상 상단 고정 ===== -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#hero" class="nav__logo">BUSAN TRIP</a>
+      <ul class="nav__menu">
+        <!-- 앵커(#id) 링크로 각 섹션으로 이동, 부드러운 이동은 CSS scroll-behavior 로 처리 -->
+        <li><a href="#about">소개</a></li>
+        <li><a href="#spots">명소</a></li>
+        <li><a href="#video">영상</a></li>
+        <li><a href="#food">먹거리</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main 은 페이지에 하나만 -->
+  <main>
+
+    <!-- ===== 히어로: gradient 오버레이 + 배경 이미지(스크립트가 자동 전환) ===== -->
+    <section id="hero" class="hero">
+      <div class="hero__bg is-active" id="heroBg1"></div>
+      <div class="hero__bg" id="heroBg2"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1>부산, 바다와 도시가 만나는 곳</h1>
+        <p>파도 소리와 야경, 그리고 맛있는 여행</p>
+        <a href="#about" class="btn">여행 시작하기</a>
+      </div>
+    </section>
+
+    <!-- ===== 소개 ===== -->
+    <section id="about" class="about">
+      <h2>부산 소개</h2>
+      <p>
+        부산은 대한민국 제2의 도시이자 최대 항구 도시입니다. 해운대와 광안리의 넓은
+        바다, 산비탈을 알록달록 물들인 감천문화마을, 밤이면 빛나는 광안대교까지—
+        도시와 자연, 낮과 밤이 모두 다른 매력을 지닌 여행지입니다.
+      </p>
+    </section>
+
+    <!-- ===== 명소 갤러리: figure + figcaption 3개 ===== -->
+    <section id="spots" class="spots">
+      <h2>대표 명소</h2>
+      <div class="spots__grid">
+        <article class="spot">
+          <figure>
+            <!-- 모든 img 에 의미 있는 alt 를 넣는다 -->
+            <img src="media/gallery1.jpg" alt="해운대 해수욕장의 넓은 백사장과 바다">
+            <figcaption>해운대 해수욕장</figcaption>
+          </figure>
+        </article>
+        <article class="spot">
+          <figure>
+            <img src="media/gallery2.jpg" alt="감천문화마을의 알록달록한 계단식 집들">
+            <figcaption>감천문화마을</figcaption>
+          </figure>
+        </article>
+        <article class="spot">
+          <figure>
+            <img src="media/gallery3.jpg" alt="밤에 불을 밝힌 광안대교의 야경">
+            <figcaption>광안대교</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 영상: video 에 controls + poster 적용 ===== -->
+    <section id="video" class="video">
+      <h2>영상으로 만나는 부산 바다</h2>
+      <video controls poster="media/poster.jpg">
+        <source src="media/busan.mp4" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+      </video>
+    </section>
+
+    <!-- ===== 먹거리: 본문 article + 팁 aside 2단 배치 ===== -->
+    <section id="food" class="food">
+      <h2>부산 먹거리</h2>
+      <div class="food__layout">
+        <article class="food__main">
+          <h3>돼지국밥</h3>
+          <p>진한 사골 육수에 부드러운 돼지고기를 넣은 부산의 대표 소울푸드입니다.</p>
+          <h3>밀면</h3>
+          <p>피란 시절 냉면 대신 밀가루로 만든, 부산에서 태어난 시원한 면 요리입니다.</p>
+          <h3>씨앗호떡</h3>
+          <p>바삭한 호떡 안에 각종 씨앗을 가득 넣은 남포동 길거리 간식입니다.</p>
+        </article>
+        <aside class="food__tip">
+          <h3>여행 팁</h3>
+          <ul>
+            <li>돼지국밥은 서면·범일동 골목이 유명해요</li>
+            <li>광안리는 저녁에 가야 야경을 볼 수 있어요</li>
+            <li>지하철 1·2호선으로 주요 명소 이동이 편해요</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== footer + 맨 위로 버튼 ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Busan Trip Guide. All rights reserved.</p>
+    <a href="#hero" id="toTop" class="to-top">↑ 맨 위로</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

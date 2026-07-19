@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노트폴리오 · 문구 갤러리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 상단바: Flexbox 로 로고는 왼쪽, 메뉴·버튼은 오른쪽(margin-left:auto) -->
+  <header class="topbar">
+    <a href="#" class="logo" id="homeLink">✎ NOTEFOLIO</a>
+    <nav class="menu">
+      <a href="#" class="filter" data-filter="all">전체</a>
+      <a href="#" class="filter" data-filter="new">신상</a>
+      <a href="#" class="filter" data-filter="best">인기</a>
+      <a href="#" class="filter" data-filter="sale">할인</a>
+    </nav>
+    <button id="themeToggle" class="theme-btn">🌙 다크모드</button>
+  </header>
+
+  <!-- 히어로: 제목·부제가 @keyframes 로 아래에서 순차 등장 -->
+  <section class="hero">
+    <h1 class="hero__title">감성 문구 갤러리</h1>
+    <p class="hero__subtitle">매일의 기록을 특별하게, 노트폴리오의 문구를 만나보세요.</p>
+  </section>
+
+  <!-- 상품 카드: CSS Grid 로 배치, 카드 8개 -->
+  <main class="grid">
+
+    <article class="card" data-category="new" style="--i:0">
+      <div class="thumb thumb--a"><span class="emoji">🖋️</span><span class="tag tag-new">NEW</span></div>
+      <div class="card__body"><h3>클래식 만년필</h3><p class="price">42,000원</p></div>
+    </article>
+
+    <article class="card" data-category="best" style="--i:1">
+      <div class="thumb thumb--b"><span class="emoji">📔</span><span class="tag tag-best">BEST</span></div>
+      <div class="card__body"><h3>가죽 다이어리</h3><p class="price">28,000원</p></div>
+    </article>
+
+    <article class="card" data-category="sale" style="--i:2">
+      <div class="thumb thumb--c"><span class="emoji">🖊️</span><span class="tag tag-sale">SALE</span></div>
+      <div class="card__body"><h3>젤펜 12색 세트</h3><p class="price">9,900원</p></div>
+    </article>
+
+    <article class="card" data-category="new" style="--i:3">
+      <div class="thumb thumb--d"><span class="emoji">📓</span><span class="tag tag-new">NEW</span></div>
+      <div class="card__body"><h3>무지 노트 3권</h3><p class="price">12,000원</p></div>
+    </article>
+
+    <article class="card" data-category="best" style="--i:4">
+      <div class="thumb thumb--e"><span class="emoji">🗂️</span><span class="tag tag-best">BEST</span></div>
+      <div class="card__body"><h3>데스크 오거나이저</h3><p class="price">34,000원</p></div>
+    </article>
+
+    <article class="card" data-category="sale" style="--i:5">
+      <div class="thumb thumb--f"><span class="emoji">🎀</span><span class="tag tag-sale">SALE</span></div>
+      <div class="card__body"><h3>마스킹 테이프 5종</h3><p class="price">6,500원</p></div>
+    </article>
+
+    <article class="card" data-category="new" style="--i:6">
+      <div class="thumb thumb--g"><span class="emoji">📐</span><span class="tag tag-new">NEW</span></div>
+      <div class="card__body"><h3>알루미늄 자·필통</h3><p class="price">18,000원</p></div>
+    </article>
+
+    <article class="card" data-category="best" style="--i:7">
+      <div class="thumb thumb--h"><span class="emoji">🧷</span><span class="tag tag-best">BEST</span></div>
+      <div class="card__body"><h3>빈티지 클립 세트</h3><p class="price">7,800원</p></div>
+    </article>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

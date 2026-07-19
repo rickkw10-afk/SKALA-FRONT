@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>투두메이트 · 할 일 관리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+    <header class="app__header">
+      <h1>오늘의 할 일 ✅</h1>
+      <!-- 오늘의 한마디: script 가 fetch 로 불러온다 -->
+      <p id="quote" class="quote">오늘의 한마디를 불러오는 중…</p>
+    </header>
+
+    <!-- 입력 폼: Enter 또는 추가 버튼으로 제출 -->
+    <form id="todoForm" class="composer">
+      <input id="todoInput" type="text" placeholder="할 일을 입력하고 Enter" autocomplete="off">
+      <button type="submit" class="composer__add">추가</button>
+    </form>
+
+    <!-- 전체/진행중/완료 필터 -->
+    <div class="filters" id="filters">
+      <button class="filter is-active" type="button" data-filter="all">전체 <span id="countAll">0</span></button>
+      <button class="filter" type="button" data-filter="active">진행중 <span id="countActive">0</span></button>
+      <button class="filter" type="button" data-filter="done">완료 <span id="countDone">0</span></button>
+    </div>
+
+    <!-- 할 일 목록 (script 가 동적으로 채운다) -->
+    <ul id="todoList" class="todo-list"></ul>
+
+    <!-- 진행률 표시 -->
+    <div class="progress">
+      <div class="progress__head">
+        <span>진행률</span>
+        <span id="progressPercent">0%</span>
+      </div>
+      <div class="progress__track">
+        <div class="progress__bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <div class="app__footer">
+      <button type="button" id="clearBtn" class="clear-btn" hidden>완료 항목 모두 지우기</button>
+    </div>
+  </div>
+
+  <!-- type="module": import/export 를 쓰기 위해 필요 (파일 더블클릭이 아니라 서버로 실행) -->
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

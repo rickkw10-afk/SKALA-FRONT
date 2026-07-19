@@ -1,0 +1,145 @@
+/* 회원가입 페이지와 동일한 테마 변수 */
+:root {
+  --brand: #5b5bd6;
+  --brand-dark: #4444c4;
+  --brand-soft: #eeeefb;
+  --ink: #1e1e2d;
+  --muted: #8a8aa0;
+  --line: #e6e6ef;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 92px 16px 60px;
+  font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+  background: #f6f6fb;
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+}
+
+/* 고정 헤더 */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 16px 24px;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(91, 91, 214, 0.25);
+}
+
+.topbar__logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.topbar__sub {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 28px;
+  box-shadow: 0 6px 30px rgba(30, 30, 45, 0.07);
+  text-align: center;
+}
+
+.badge {
+  font-size: 44px;
+}
+
+.card__title {
+  margin: 8px 0 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.card__desc {
+  margin: 6px 0 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===== 결과 표 =====
+   table-wrap 없이 table 자체에 둥근 모서리를 주기 위해
+   border-collapse 대신 overflow:hidden 을 쓴다. */
+.result {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;      /* 둥근 모서리 밖으로 셀 배경이 삐져나오지 않게 */
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.result th,
+.result td {
+  padding: 12px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* 마지막 줄은 아래 구분선 제거 */
+.result tr:last-child th,
+.result tr:last-child td {
+  border-bottom: none;
+}
+
+.result th {
+  width: 34%;
+  font-weight: 700;
+  color: var(--brand);
+  background: var(--brand-soft);
+}
+
+.result td {
+  color: var(--ink);
+  word-break: break-all;
+}
+
+/* 버튼 (특이도: .btn → .btn-primary) */
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 12px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  transition: background-color 0.15s ease;
+}
+
+.btn.btn-primary {
+  background: var(--brand);
+  color: #fff;
+}
+
+.btn.btn-primary:hover {
+  background: var(--brand-dark);
+}
+
+.copyright {
+  margin: 20px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}

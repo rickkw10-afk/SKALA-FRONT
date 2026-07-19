@@ -1,0 +1,224 @@
+/* ===== 테마 변수 ===== */
+:root {
+  --brand: #17b8a6;
+  --brand-dark: #109184;
+  --brand-soft: #e2f7f4;
+  --ink: #16302c;
+  --muted: #7c948f;
+  --bg: #eef6f4;
+  --card: #ffffff;
+  --line: #e0ebe8;
+  --danger: #ef6a5a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 16px;
+  font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== 앱 카드 ===== */
+.app {
+  width: 100%;
+  max-width: 480px;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 28px 24px 24px;
+  box-shadow: 0 10px 40px rgba(20, 60, 55, 0.1);
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.quote {
+  margin: 8px 0 20px;
+  font-size: 13px;
+  color: var(--muted);
+  min-height: 18px;
+}
+
+/* ===== 입력 폼 ===== */
+.composer {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.composer input {
+  flex: 1;
+  padding: 13px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--bg);
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.composer input:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--brand);
+}
+
+.composer__add {
+  padding: 0 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brand);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.composer__add:hover {
+  background: var(--brand-dark);
+}
+
+/* ===== 필터 ===== */
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.filter {
+  flex: 1;
+  padding: 8px 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--bg);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.filter span {
+  font-weight: 800;
+}
+
+.filter.is-active {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+/* ===== 할 일 목록 ===== */
+.todo-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.todo input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brand);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo__text {
+  flex: 1;
+  font-size: 15px;
+  word-break: break-all;
+}
+
+/* 완료된 항목은 취소선 + 흐리게 */
+.todo.done .todo__text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.todo__del {
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 15px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.todo__del:hover {
+  color: var(--danger);
+}
+
+.empty {
+  text-align: center;
+  padding: 28px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ===== 진행률 바 ===== */
+.progress {
+  margin-bottom: 16px;
+}
+
+.progress__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.progress__track {
+  height: 10px;
+  background: var(--bg);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress__bar {
+  height: 100%;
+  width: 0;
+  background: var(--brand);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* ===== 하단 ===== */
+.app__footer {
+  text-align: center;
+}
+
+.clear-btn {
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--danger);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.clear-btn:hover {
+  background: #fdeeeb;
+}
